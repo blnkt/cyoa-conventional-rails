@@ -1,0 +1,5 @@
+<% @chapters.each do |chapter| %>
+  <div class="panel panel-body">
+    <%= link_to chapter.prompt, chapter_path(@chapter), class: "btn btn-block btn-default" %>
+  </div>
+<% end %>
