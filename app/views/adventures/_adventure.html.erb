@@ -1,0 +1,14 @@
+<div class="col-md-6">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <div class="panel-title">
+	    <%= link_to adventure.title, adventure_path(adventure), class: "btn-block btn-default" %>
+	    </div>
+	  </div>
+	  <div class="panel-footer clearfix">
+	    <div class="pull-right">
+	      <%= link_to adventure.user.name, user_path(adventure.user), class: "btn btn-block btn-default" %>
+	    </div>
+	  </div>
+	</div>
+</div>
