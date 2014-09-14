@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cyoa2</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <%= link_to "Choose Your Own Aventure", root_path, class: "navbar-brand" %>
+        </div>
+        <div class="navbar-right">
+          <ul class="navbar-right">
+            <% if user_signed_in? %>
+              <%= link_to "sign out", destroy_user_session_path, method: "delete", class: "btn-sm btn-default pull-right" %>
+              <%= link_to 'edit account', edit_user_registration_path, class: "btn-sm btn-default pull-right" %>
+              <%= link_to "#{current_user.name}'s Profile", user_path(current_user), class: "btn-sm btn-default pull-right" %>
+            <% else %>
+              <%= link_to "sign up", new_user_registration_path, class: "btn-sm btn-default pull-right" %>
+              <%= link_to "login", new_user_session_path, class: "btn-sm btn-default pull-right" %>
+            <% end %>
+            <%= link_to 'start a new adventure', new_adventure_path, class: "btn-sm btn-default pull-right" %>
+          </ul>
+        </div>
+    </nav>
+    <div class="row">
+      <%= flash[:alert] %>
+	    <%= flash[:notice] %>
+      <%= yield %>
+    </div>
+    <%= link_to "back to adventures", root_path, class: "btn btn-block btn-default" %>
+  </div>
+</body>
+</html>
