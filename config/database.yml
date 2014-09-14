@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+
+development:
+  <<: *default
+  database: chooseyourown_development
+  username: blnkt
+  password: blnkt
+  
+test:
+  <<: *default
+  database: chooseyourown_test
+  username: blnkt
+  password: blnkt
+
+production:
+  <<: *default
+  database: choose_production
+  username: choose
+  password: <%= ENV['CHOOSE_DATABASE_PASSWORD'] %>
