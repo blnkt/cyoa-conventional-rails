@@ -24,7 +24,7 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.find(params[:id])
     @adventure.add_chapter(@chapter)
     @choices = @chapter.choices
-    @parent = Chapter.find(@chapter.parent_id)
+    @parent = Chapter.find(@chapter.parent_id) unless @chapter.parent_id.nil?
   end
 
   private
@@ -32,5 +32,5 @@ class ChaptersController < ApplicationController
   def chapter_params
     params.require(:chapter).permit(:prompt, :episode, :parent_id)
   end
-  
+
 end
