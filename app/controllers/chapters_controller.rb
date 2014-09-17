@@ -31,7 +31,8 @@ class ChaptersController < ApplicationController
   def update
     @adventure = Adventure.find(params[:adventure_id])
     @chapter = Chapter.find(params[:id])
-    if @chapter.update(episode: params[:chapter]['episode'])
+    unless params[:chapter]['episode'] == ""
+      @chapter.update(episode: params[:chapter]['episode'])
       flash[:notice] = "episode commited"
       redirect_to adventure_chapter_path(@adventure, @chapter)
     else
