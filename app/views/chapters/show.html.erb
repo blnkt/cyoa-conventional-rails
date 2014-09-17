@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+  <div class="panel-footer">
+    <%= @chapter.prompt %>
+  </div>
+  <div class="panel-body">
+    <%= render 'episode' %>
+  </div>
+	<h3>c<small>hoices</small></h3>
+	<div class="panel-footer clearfix">
+	  <%= render 'choices' %>
+	</div>
+</div>
+<p><%= link_to "adventure started by #{@adventure.user.name}", user_path(@adventure.user), class: "btn btn-block btn-default" %></p>
+
+
