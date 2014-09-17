@@ -14,4 +14,14 @@ describe Adventure do
 	    expect(@adventure.chapters.last).to eq(@chapter)
 	  end
 	end
+
+  describe "#progress" do
+	  it "an editted list of a user's progress through available chapters in a given adventure" do
+		  @chapter = FactoryGirl.create(:chapter)
+	    @adventure = FactoryGirl.create(:adventure)
+	  	@adventure.add_chapter(@chapter)
+	  	@adventure.add_chapter(@chapter)
+	    expect(@adventure.progress).to eq([@chapter])
+	  end
+	end
 end

@@ -26,7 +26,7 @@ class AdventuresController < ApplicationController
   def show
     @adventure = Adventure.find(params[:id])
     @chapter = Chapter.all.first
-    @chapters = @adventure.chapters
+    @chapters = @adventure.progress
   end
 
 private

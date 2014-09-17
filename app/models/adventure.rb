@@ -7,4 +7,8 @@ class Adventure < ActiveRecord::Base
   def add_chapter chapter
     self.chapters << chapter
   end
+
+  def progress
+    progress = self.chapters.uniq
+  end
 end
