@@ -19,4 +19,14 @@ describe Chapter do
 	  end
 	end
 
+  describe '#choices' do
+	  it "return all the chapters with a target chapter's id as their parent_id (i.e. all a target chapters choices)" do
+      parent_chapter = FactoryGirl.create(:chapter)
+	    parent_chapter.add_choice("sex")
+	    parent_chapter.add_choice("rock & roll")
+	    choices = []
+	    parent_chapter.choices.each { |choice| choices << choice.prompt }
+      expect(choices).to eq(["sex", "rock & roll"])
+    end
+  end
 end

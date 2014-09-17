@@ -6,4 +6,8 @@ class Chapter < ActiveRecord::Base
   def add_choice prompt
   	Chapter.create(prompt: prompt, parent_id: self.id) unless prompt.nil?
   end
+
+  def choices
+  	Chapter.where(parent_id: self.id)
+  end
 end 
