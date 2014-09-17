@@ -4,8 +4,8 @@
 	<% end %>
 <% end %>
 
-<%= link_to 'add choice', new_adventure_chapter_path(@adventure), class: "btn btn-block btn-default" %>
+<%= link_to 'add choice', new_adventure_chapter_path(@adventure), class: "btn btn-block btn-info" %>
 
 <% unless @chapter.parent_id.nil? %>
-  <%= link_to 'turn back', adventure_chapter_path(@adventure, Chapter.find(@chapter.parent_id)), class: "btn btn-block btn-default" %>
+  <%= link_to 'turn back', adventure_chapter_path(@adventure, Chapter.find(@chapter.parent_id)), class: "btn btn-block btn-warning" %>
 <% end %>

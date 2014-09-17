@@ -22,7 +22,7 @@
               <%= link_to "sign up", new_user_registration_path, class: "btn-sm btn-default pull-right" %>
               <%= link_to "login", new_user_session_path, class: "btn-sm btn-default pull-right" %>
             <% end %>
-            <%= link_to 'start a new adventure', new_adventure_path, class: "btn-sm btn-default pull-right" %>
+            <%= link_to 'start a new adventure', new_adventure_path, class: "btn-sm btn-success pull-right" %>
           </ul>
         </div>
     </nav>
@@ -31,7 +31,7 @@
 	    <%= flash[:notice] %>
       <%= yield %>
     </div>
-    <%= link_to "back to adventures", root_path, class: "btn btn-block btn-default" %>
+    <%= link_to "back to adventures", root_path, class: "btn btn-block btn-danger" %>
   </div>
 </body>
 </html>

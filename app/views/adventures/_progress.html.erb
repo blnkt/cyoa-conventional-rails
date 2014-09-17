@@ -1,5 +1,9 @@
 <% @chapters.each do |chapter| %>
-  <div class="panel panel-body">
+  <div class="panel panel-heading">
     <%= link_to chapter.prompt, adventure_chapter_path(@adventure, chapter), class: "btn btn-block btn-default" %>
+  </div>
+
+  <div class="panel panel-body">
+    <%= chapter.episode %>
   </div>
 <% end %>
