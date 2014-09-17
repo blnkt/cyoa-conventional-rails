@@ -1,4 +1,8 @@
 <div class="col-md-4">
+  <%= link_to "start from the beginning", chapter_path(@chapter) %>
+  <% unless @chapters == [] %>
+    <%= link_to "jump back into the adventure", chapter_path(@chapters.last) %>
+  <% end %>
 	<div class="panel panel-default">
     <%= render 'progress' %>
 	</div>
