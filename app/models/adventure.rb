@@ -15,7 +15,7 @@ class Adventure < ActiveRecord::Base
 
   def prologue
     if Chapter.all == []
-      fChapter.create(prompt: "Welcome to the Adventure", episode: "You awake in a field.  Your limbs ache.  Your mind is fuzzy; full of star-stuffs.  You here only the birds.  You try to stand to better get your bearings int he hot noonday sun but find your knees and elbows particularly weak.  You return to the ground and resign yourself to acclimating more slowly to your surroundings.")
+      chapter = Chapter.create(prompt: "Welcome to the Adventure", episode: "You awake in a field.  Your limbs ache.  Your mind is fuzzy; full of star-stuffs.  You here only the birds.  You try to stand to better get your bearings int he hot noonday sun but find your knees and elbows particularly weak.  You return to the ground and resign yourself to acclimating more slowly to your surroundings.")
       a1 = "You find a pair of keys.  Pick them up and walk down to the road"
       a2 = "You spy a bike.  Take it out of the field to the nearby road"
       a3 = "You're sitting on a hat! Put it on and head towards the sound of water."

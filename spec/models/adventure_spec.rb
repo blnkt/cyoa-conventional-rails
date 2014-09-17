@@ -24,4 +24,11 @@ describe Adventure do
 	    expect(@adventure.progress).to eq([@chapter])
 	  end
 	end
+
+	  describe "#prologue" do
+		  it "instatiates the prologue if it does not already exist" do
+		    new_adventure = Adventure.create(user_id: 1, title: 'test_adventure')
+		    expect(Chapter.all.first.prompt).to eq("Welcome to the Adventure")
+		  end
+		end
 end
