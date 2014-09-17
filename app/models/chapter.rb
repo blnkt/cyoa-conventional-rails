@@ -11,3 +11,4 @@ class Chapter < ActiveRecord::Base
   	Chapter.where(parent_id: self.id)
   end
 end 
+
