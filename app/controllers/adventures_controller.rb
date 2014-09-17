@@ -16,7 +16,7 @@ class AdventuresController < ApplicationController
     @adventure = Adventure.new(user_id: current_user.id, title: adventure_params[:title])
     if @adventure.save
       flash[:notice] = "Welcome to your adventure #{@adventure.user.name}."
-      redirect_to chapter_path(@chapter)
+      redirect_to adventure_chapter_path(@adventure, @chapter)
     else
       flash[:notice] = "Adventure cannot be blank."
       render 'new'
