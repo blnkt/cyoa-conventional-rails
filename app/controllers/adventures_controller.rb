@@ -24,8 +24,8 @@ class AdventuresController < ApplicationController
   end
 
   def show
-    @chapter = Chapter.all.first
     @adventure = Adventure.find(params[:id])
+    @chapter = Chapter.all.first
     @chapters = @adventure.chapters
   end
 
