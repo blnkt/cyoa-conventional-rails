@@ -8,7 +8,7 @@ Choose Your Own Adventure 0.3.0
 
 Setup
 
-  Download cyoa-conventional-rails and then, in terminal, bundle the gems, create the database, start the rails server, and direct your web browser to localhhost:3000.
+  Download cyoa-conventional-rails and then, in terminal, bundle the gems, create the database, start the rails server, and direct your web browser to localhhost:3000. OR [check it out on Heroku](http://cyoa2.herokuapp.com)
 
 Dependencies
   * [Ruby](https://www.ruby-lang.org/en/)
