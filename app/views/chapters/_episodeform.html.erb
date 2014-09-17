@@ -1,0 +1,6 @@
+<form id="chapter_episode" action="/adventures/<%= @adventure.id %>/chapters/<%= @chapter.id %>" method="post">
+	<input name="_method" type="hidden" value="patch">
+	<textarea  rows="8" cols="54" form="chapter_episode" name="chapter[:episode]" placeholder="this adventure needs your episode"></textarea>
+	<br>
+	<button class="btn btn-default">add episode</button>
+</form>

@@ -1,0 +1,7 @@
+<div class="panel-body"> 
+  <% if @chapter.episode.nil? %>
+    <%= render 'episodeform' %>
+  <% else %> 
+	  <%= @chapter.episode %> 
+	<% end %>
+</div>

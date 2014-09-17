@@ -1,0 +1,11 @@
+<% unless @choices == [] %>
+	<%= @choices.each do |choice| %>
+	  <%= link_to choice.prompt, adventure_chapter_path(@adventure, choice), class: "btn btn-block btn-default" %>
+	<% end %>
+<% end %>
+
+<%= link_to 'add choice', new_adventure_chapter_path(@adventure), class: "btn btn-block btn-default" %>
+
+<% unless @chapter.prompt == "Welcome to the Adventure" %>
+  <%= link_to 'turn back', adventure_chapter_path(@adventure, @parent), class: "btn btn-block btn-default" %>
+<% end %>
